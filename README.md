@@ -26,7 +26,7 @@ The API is built with **Node.js, Express, and MongoDB**, with full **JWT authent
 ## # Project Structure
 
 
-bash```
+```bash
 
 taskmaster-backend/
 │
