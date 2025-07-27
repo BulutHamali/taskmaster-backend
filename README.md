@@ -52,25 +52,25 @@ taskmaster-backend/
 
 ```
 
-## # Setup Instructions
+## Setup Instructions
 
-# Clone the repository and navigate into it
+Clone the repository and navigate into it:
 git clone <your-repo-url>
 cd taskmaster-backend
 
-# Install dependencies
+Install dependencies:
 npm install
 
-# Create a .env file in the root directory (replace with your values)
+Create a .env file in the root directory (replace with your values):
 echo "PORT=3001
 MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/taskmaster?retryWrites=true&w=majority
 JWT_SECRET=your_secret_key" > .env
 
-# Start the server (with auto-restart)
+Start the server (with auto-restart):
 npm run dev
 
-# The API will be available at:
-# http://localhost:3001
+The API will be available at:
+http://localhost:3001
 
 
 ---
