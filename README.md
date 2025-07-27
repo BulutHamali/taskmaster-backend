@@ -75,117 +75,116 @@ npm run dev
 
 ---
 
-## # Using Postman to Test the API
+## Using Postman to Test the API
 
-# 1. Register a User
-# Method: POST
-# URL: http://localhost:3001/api/users/register
-# In Postman: Body → raw → JSON
+1. Register a User  
+Method: POST  
+URL: http://localhost:3001/api/users/register  
+Body (raw JSON):
 {
   "username": "alice",
   "email": "alice@example.com",
   "password": "mypassword123"
 }
-# Click Send. Copy the "token" from the response for later.
+Click Send. Copy the token from the response.
 
-# 2. Login to Get a Token
-# Method: POST
-# URL: http://localhost:3001/api/users/login
-# In Postman: Body → raw → JSON
+2. Login to Get a Token  
+Method: POST  
+URL: http://localhost:3001/api/users/login  
+Body (raw JSON):
 {
   "email": "alice@example.com",
   "password": "mypassword123"
 }
-# Click Send. Copy the "token" from the response.
-# Use this token for all protected Project and Task routes.
+Click Send. Copy the token. Use this token for all protected Project and Task routes.
 
-# 3. Create a Project
-# Method: POST
-# URL: http://localhost:3001/api/projects
-# In Postman: Authorization → Bearer Token (paste your token)
-# Body → raw → JSON
+3. Create a Project  
+Method: POST  
+URL: http://localhost:3001/api/projects  
+Authorization: Bearer Token (paste your token)  
+Body (raw JSON):
 {
   "name": "My Project",
   "description": "Optional description"
 }
-# Click Send. Save the "_id" of the created project.
+Click Send. Save the _id of the created project.
 
-# 4. List All Projects
-# Method: GET
-# URL: http://localhost:3001/api/projects
-# In Postman: Authorization → Bearer Token (paste your token)
-# Click Send to see all projects for your user.
+4. List All Projects  
+Method: GET  
+URL: http://localhost:3001/api/projects  
+Authorization: Bearer Token (paste your token)  
+Click Send to see all projects for your user.
 
-# 5. Get a Single Project by ID
-# Method: GET
-# URL: http://localhost:3001/api/projects/<projectId>
-# In Postman: Authorization → Bearer Token (paste your token)
-# Replace <projectId> with the actual project "_id".
-# Click Send to see the project details.
+5. Get a Single Project by ID  
+Method: GET  
+URL: http://localhost:3001/api/projects/<projectId>  
+Authorization: Bearer Token (paste your token)  
+Replace <projectId> with the actual project _id.  
+Click Send to see the project details.
 
-# 6. Update a Project
-# Method: PUT
-# URL: http://localhost:3001/api/projects/<projectId>
-# In Postman: Authorization → Bearer Token (paste your token)
-# Body → raw → JSON
+6. Update a Project  
+Method: PUT  
+URL: http://localhost:3001/api/projects/<projectId>  
+Authorization: Bearer Token (paste your token)  
+Body (raw JSON):
 {
   "name": "Updated Project",
   "description": "Updated description"
 }
-# Click Send to update the project.
+Click Send to update the project.
 
-# 7. Delete a Project
-# Method: DELETE
-# URL: http://localhost:3001/api/projects/<projectId>
-# In Postman: Authorization → Bearer Token (paste your token)
-# Click Send to delete the project.
+7. Delete a Project  
+Method: DELETE  
+URL: http://localhost:3001/api/projects/<projectId>  
+Authorization: Bearer Token (paste your token)  
+Click Send to delete the project.
 
-# 8. Create a Task in a Project
-# Method: POST
-# URL: http://localhost:3001/api/projects/<projectId>/tasks
-# In Postman: Authorization → Bearer Token (paste your token)
-# Body → raw → JSON
+8. Create a Task in a Project  
+Method: POST  
+URL: http://localhost:3001/api/projects/<projectId>/tasks  
+Authorization: Bearer Token (paste your token)  
+Body (raw JSON):
 {
   "title": "My Task",
   "description": "Optional task description"
 }
-# Click Send. Save the "_id" of the task.
+Click Send. Save the _id of the task.
 
-# 9. List All Tasks for a Project
-# Method: GET
-# URL: http://localhost:3001/api/projects/<projectId>/tasks
-# In Postman: Authorization → Bearer Token (paste your token)
-# Click Send to view all tasks in the project.
+9. List All Tasks for a Project  
+Method: GET  
+URL: http://localhost:3001/api/projects/<projectId>/tasks  
+Authorization: Bearer Token (paste your token)  
+Click Send to view all tasks in the project.
 
-# 10. Update a Task
-# Method: PUT
-# URL: http://localhost:3001/api/projects/tasks/<taskId>
-# In Postman: Authorization → Bearer Token (paste your token)
-# Body → raw → JSON
+10. Update a Task  
+Method: PUT  
+URL: http://localhost:3001/api/projects/tasks/<taskId>  
+Authorization: Bearer Token (paste your token)  
+Body (raw JSON):
 {
   "status": "In Progress"
 }
-# Click Send to update the task.
+Click Send to update the task.
 
-# 11. Delete a Task
-# Method: DELETE
-# URL: http://localhost:3001/api/projects/tasks/<taskId>
-# In Postman: Authorization → Bearer Token (paste your token)
-# Click Send to delete the task.
+11. Delete a Task  
+Method: DELETE  
+URL: http://localhost:3001/api/projects/tasks/<taskId>  
+Authorization: Bearer Token (paste your token)  
+Click Send to delete the task.
 
-
----
-
-## # Notes
-
-# - All protected routes require a Bearer token.
-# - Tokens are obtained via the login endpoint.
-# - Passwords are hashed using bcrypt before saving.
-# - JWT tokens expire in 2 hours by default.
-# - Users can only manage their own projects and tasks.
 
 ---
 
-## # License
+## Notes
 
-# This project is for educational purposes only and not intended for production use.
+- All protected routes require a Bearer token.
+- Tokens are obtained via the login endpoint.
+- Passwords are hashed using bcrypt before saving.
+- JWT tokens expire in 2 hours by default.
+- Users can only manage their own projects and tasks.
+
+---
+
+## License
+
+This project is for educational purposes only and not intended for production use.
